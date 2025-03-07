@@ -1,0 +1,30 @@
+{
+  "name": "lab_prueba_fullstack",
+  "version": "1.0.0",
+  "description": "¡Bienvenido a la prueba técnica para desarrolladores Fullstack! En esta prueba, trabajarás con una base de datos que contiene información de los sets y cartas del juego Pokémon TCG. Tu objetivo será construir un backend con una API REST y un frontend para listar y visualizar esta información.",
+  "main": "testConnection.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloGomezH/PruebaFullStack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloGomezH/PruebaFullStack/issues"
+  },
+  "homepage": "https://github.com/PabloGomezH/PruebaFullStack#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
