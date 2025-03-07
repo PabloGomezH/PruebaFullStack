@@ -8,6 +8,6 @@ app.use(express.json());
 app.use('/api', apiRouter);
 
 app.listen(PORT, () => {
-  console.log('PROBANDOOO')
+  console.log('prueba')
   console.log(`Funcionando en puerto ${PORT}`);
 });

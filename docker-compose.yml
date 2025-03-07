@@ -24,7 +24,7 @@ services:
       - DB_PASSWORD=admin
       - DB_PORT=5432
     volumes:
-      - ./src:/app/src  
+      - .:/app  
     depends_on:
       - pokemon_db
 
