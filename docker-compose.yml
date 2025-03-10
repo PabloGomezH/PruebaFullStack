@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   pokemon_db:
     image: postgres:14
@@ -13,10 +14,11 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   api:
-    build: .
+    build: 
+      context: ./backend
     container_name: pokemon_api
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       - DB_USER=postgres
       - DB_HOST=pokemon_db
@@ -24,9 +26,22 @@ services:
       - DB_PASSWORD=admin
       - DB_PORT=5432
     volumes:
-      - .:/app  
+      - ./backend:/app  
     depends_on:
       - pokemon_db
-
+   
+  frontend:
+    build:
+      context: ./frontend
+    container_name: pokemon_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules  # Evita sobrescribir node_modules en el contenedor
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Habilita el hot-reloading en Docker
+    depends_on:
+      - api
 volumes:
   postgres-data:
